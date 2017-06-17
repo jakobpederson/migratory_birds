@@ -2,6 +2,10 @@ import unittest
 import migratory_birds
 
 
+class InvalidData(Exception):
+    pass
+
+
 class TestBirdCounter(unittest.TestCase):
 
     def setUp(self):
@@ -20,7 +24,7 @@ class TestBirdCounter(unittest.TestCase):
         self.assertEqual(5, self.client.migratory_birds(5, [6, 6, 6, 6, 6, 5, 5, 5, 5, 5]))
 
     def test_validate_data(self):
-        self.fail(self.client.validate_data(0, [2, 2, 2, 3]))
+        self.assertTrue(isinstance(self.client.validate_data(0, [2, 2, 2, 3]), Exception))
 
     def test_validate_data_in_migratory_birds(self):
         self.assertEqual('invalid data', self.client.migratory_birds(0, [2, 2, 2, 2, 2, 3, 3, 3, 3, 3]))
