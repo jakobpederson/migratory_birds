@@ -8,6 +8,7 @@
  Constraints
 
  It is guaranteed that each type is 1, 2, 3, 4, or 5.
+ 
  Output Format
 
  Print the type number of the most common bird; if two or more types of birds are equally common, choose the type with the smallest ID number.
