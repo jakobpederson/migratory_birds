@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 class InvalidData(Exception):
     pass
 
